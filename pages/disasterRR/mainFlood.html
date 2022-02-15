@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Flood and DRR</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+    <style>
+       
+   </style>
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">18 min</em></p>
+    </blockquote>
+    <!-- 洪水介绍的标题 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About Flood Disasters</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>When rain water falls on the land, some seeps into the ground, and some flows downhill on the surface forming streams and rivers, which erode the land and transport sediment, leading to deposition downstream. When the amount of water flowing into a river exceeds a certain amount, some water overflows the bank, resulting in flood. Plains along rivers are formed naturally by recurrent floods. Flood inundation of land and properties in built-up areas, particularly densely populated areas cause damage, which is called a flood disaster.</div>
+    <!-- 面板的背景颜色和手风琴折叠的设置，洪水发生的原因 -->
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">Major reasons of river flooding</div>
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Rainfall due to frontal activities, tropical cyclones, etc.</h2>
+              <div class="layui-colla-content">
+                <p>If the amount of rainfall increases rapidly, all of fallen water cannot penetrate the underground and more water flows into the river, leading to flooding.<button onclick="document.getElementById('id01').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Snowmelt</h2>
+              <div class="layui-colla-content">
+                <p>In the snow-covered areas, with the beginning of warmer spring, floods may occur due to snowmelt in the upstream areas. In some areas, river flow in the spring snowmelt season is higher than that in any other season.<button onclick="document.getElementById('id03').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- 洪水发生原因的相关图片，id01是降雨，id02是高潮，id03是融雪 -->
+    <div id="id01" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="img/inner(pre_version)/hshui.jpg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id02" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="img/inner(pre_version)/gao.jpg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id03" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="img/inner(pre_version)/xue.jpg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <!-- 洪水的例子，分别为中国和日本 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Example of Flood</h3></legend>
+        </fieldset>
+    </div>
+   <!-- 中国与日本例子的入口，面板 -->
+    <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+  
+   
+      <div class="layui-card">
+        <div class="layui-card-header"><h2>Kashio River</h2></div>
+        <div class="layui-card-body">
+         　<p>The Kashio River is a Class B river in Kanagawa Prefecture, about 50 kilometers southwest of Tokyo. Because the Kashio River is a short, meandering stream with a minimal descent, it has long been for flooding. <br>
+           <br></p>
+          <div><a class="layui-btn layui-btn-radius openJapan_btn" target="_blank">Open the Map</a></div><br>
+          <!--  <a href="ChinaFlood.html">-->
+          <img border="0" width="85%" src="../../img/disaster/kumon.png" />
+          <v><br>Web Flood Hazard Map of Kashio River</v>
+        </div>
+      </div>
+    </div>
+   
+    </div>
+
+   <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Video: Typhoon No. 18 in 2014 - Seya Kashio Line flooded</h3></legend>
+        </fieldset>
+    </div>  
+    <div class="content"><p align="left">Typhoon No. 18 was a powerful tropical cyclone that affected Japan in early October 2014. A total of eleven people were killed by this typhoon, with several others missing or injured.<br></p></div>
+ <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-card">
+      <div class="layui-card-body">
+      </div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rLjhBUAsDt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <v><br>© 寺師勲</v>
+   </div>
+  </div>
+ </div>
+    
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>   
+    <script type="text/javascript" src="../../js/innerPage_flood.js"></script>
+</body>
+</html>

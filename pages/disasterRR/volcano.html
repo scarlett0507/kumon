@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Volcano</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+    <style>
+       
+   </style>
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">18 min</em></p>
+    </blockquote>
+    <!-- 洪水介绍的标题 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About Volcano</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>A volcano is an opening in the Earth's crust through which lava, volcanic ash, and gases escape. Volcanic eruptions are partly driven by pressure from dissolved gas, much as escaping gases force the cork out of a bottle of champagne.</div>
+    <div class="content"><p>Volcanic gases can reach the stratosphere, forming sulfuric acid aerosols that can reflect solar radiation and lower surface temperatures significantly. Ash thrown into the air by eruptions can hazard aircraft, especially jet aircraft. This can cause major disruptions to air travel.</div>
+    <div class="content"><p>Past volcanic activity also has created important economic resources. Volcanic ash and weathered basalt produce some of the most fertile soil in the world, rich in nutrients such as iron, magnesium, potassium, calcium, and phosphorus. Volcanic activity is accompanied by high heat flow rates from the Earth's interior. These can be tapped as geothermal power.</div>
+    <!-- 面板的背景颜色和手风琴折叠的设置，洪水发生的原因 -->
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">Major Reasons of Volcano</div>
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Divergent Plate Boundaries</h2>
+              <div class="layui-colla-content">
+                <p>In plate tectonics, a divergent plate boundary is a linear feature between two tectonic plates moving away from each other. Most active divergent plate boundaries occur between oceanic plates and exist as mid-oceanic ridges. The pressure decrease in the rising mantle rock leads to adiabatic expansion and the partial melting of the rock, causing volcanism and creating a new oceanic crust. Divergent boundaries also form volcanic islands, which occur when the plates move apart to produce gaps that magma rises to fill.<button onclick="document.getElementById('id01').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Convergent Plate Boundaries</h2>
+              <div class="layui-colla-content">
+                <p>A convergent boundary is an area on Earth where two or more lithospheric plates collide. One plate eventually slides beneath the other, a process known as subduction. These collisions happen on scales of millions to tens of millions of years and can lead to volcanism, earthquakes, orogenesis, destruction of the lithosphere, and deformation.<button onclick="document.getElementById('id02').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Hotspots</h2>
+              <div class="layui-colla-content">
+                <p>Hotspots are volcanic locales thought to be fed by an underlying mantle that is anomalously hot compared with the surrounding cover. A hotspot's position on the Earth's surface is independent of tectonic plate boundaries, so hotspots may create a chain of volcanoes as the plates move above them.<button onclick="document.getElementById('id03').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- 洪水发生原因的相关图片，id01是降雨，id02是高潮，id03是融雪 -->
+    <div id="id01" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/disaster/volcano01.jpeg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id02" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/disaster/volcano02.jpeg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id03" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/disaster/hotspots.jpeg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <!-- 洪水的例子，分别为中国和日本 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>World Volcanoes Distribution Map</h3></legend>
+        </fieldset>
+    </div>
+   <!-- 中国与日本例子的入口，面板 -->
+    <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-card">
+        <div class="layui-card-body">
+         　<p align="left">Volcanoes are not randomly distributed over the Earth's surface. Most are concentrated on the edges of continents, along island chains, or beneath the sea, forming long mountain ranges. More than half of the world's active volcanoes above sea level encircle the Pacific Ocean to form the circum-Pacific "Ring of Fire."<br></p>
+           <p align="left">The following Web map is the world volcanoes distribution map.</p> </div>
+          <div><a class="layui-btn layui-btn-radius openVolcano_btn" target="_blank">Open the Map</a></div></br>
+          <!--  <a href="ChinaFlood.html">-->
+         <img border="0" width="85%" src="../../img/disaster/volcanoWorld.jpg" />
+          <v><br>World Volcanoes Distribution Map © MapCruzin</v>
+    </div>
+    </div>
+    </div>
+
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Fukushima E Hazard Maps</h3></legend>
+        </fieldset>
+    </div>
+   <!-- 中国与日本例子的入口，面板 -->
+    <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-card">
+        <div class="layui-card-body">
+     <p align="left">This Web map is "ふくしまeマップ～福島市地理情報システム～." It provides geographical information such as Fukushima urban planning information and hazard maps. Including a volcano hazard map and citizens can check the areas affected by the eruption, such as Mount Adatara. </br></p> 
+     <p align="left">Check out ➡️<a href="https://www.sonicweb-asp.jp/fukushimacity/map?theme=th_19&layers=th_18,ROADMAP#layers=ROADMAP%2Cth_18&pos=140.27718267762825%2C37.60322232799915&scale=120000" target="_blank" rel="noopener noreferrer"> Fukushima E Hazard Maps</a>.</p></br>
+      <div class="demo" >
+    <a href="https://www.sonicweb-asp.jp/fukushimacity/map?theme=th_19&layers=th_18,ROADMAP#layers=ROADMAP%2Cth_18&pos=140.27718267762825%2C37.60322232799915&scale=120000" target="_blank" rel="noopener noreferrer"><img border="0" width="85%" src="../../img/disaster/adatara.jpg" alt="HTML tutorial"></a>         
+     <v><br>Use as study material only. © Fukushima City</v>
+     </div>
+   </div>
+    </div>
+    </div>
+    </div>
+    
+      <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Video: Volcanoes | National Geographic</h3></legend>
+        </fieldset>
+    </div>  
+ <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-card">
+      <div class="layui-card-body">
+      <p align="left">More than 50 volcanic eruptions plague the earth every year. This video shows how volcanoes form when they erupt and cover areas.<br></p>
+        </div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VNGUdObDoLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <v><br>© National Geographic</v>
+  
+   </div>
+  </div>
+  </div>
+      
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>   
+    <script type="text/javascript" src="../../js/innerPage_volcano.js"></script>
+</body>
+</html>

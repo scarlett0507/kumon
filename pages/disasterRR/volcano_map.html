@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>World Volcano Distribution Map</title>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.14/esri/themes/light/main.css"
+    />
+
+    <script src="https://js.arcgis.com/4.14/"></script>
+
+    <script>
+      require([
+    	  "esri/views/MapView",
+          "esri/WebMap",
+          "esri/widgets/LayerList",
+          "esri/widgets/BasemapGallery",
+          "esri/widgets/Legend",
+          "esri/widgets/Expand",
+          "esri/widgets/ScaleBar"
+    	  ], function(
+    			  MapView,
+    		         WebMap,
+    		         LayerList,
+    		         BasemapGallery,
+    		         Legend,
+    		         Expand,
+    		         ScaleBar
+    			  ) {
+
+        var webmap = new WebMap({
+          portalItem: {
+            // autocasts as new PortalItem()
+            id: "e66c17fcce3c456c945415d690c39dbc"
+          }
+        });
+
+        
+        var view = new MapView({
+            map: webmap,
+            container: "viewDiv",
+            center: [137.72,38.68],
+            zoom: 4
+          });
+        
+        var scaleBar = new ScaleBar({
+      	  view: view,
+      	  unit:"metric"
+      	});
+      	// Add widget to the bottom left corner of the view
+      	view.ui.add(scaleBar, {
+      	  position: "bottom-right"
+      	});
+        
+        view.ui.add(
+                [
+                  new Expand({
+                    content: new Legend({
+                      view: view
+                    }),
+                    view: view,
+                    group: "top-left"
+                  }),
+                  new Expand({
+                    content: new LayerList({ view: view }),
+                    view: view,
+                    group: "top-left"
+                  }),
+                  new Expand({
+                    content: new BasemapGallery({
+                      view: view
+                    }),
+                    view: view,
+                    expandIconClass: "esri-icon-basemap",
+                    group: "top-left"
+                  })
+                ],
+                "top-left"
+              );
+        
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

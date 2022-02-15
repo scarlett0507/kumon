@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Utilization of GIS</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">10 min</em></p>
+    </blockquote>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Utilization of GIS</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>GIS can display spatial data and solve problems involving spatial factors. GIS is useful for relating, integrating, and analyzing information from these different spatial data layers. Therefore, anything placed on a map is a candidate for GIS.</p></div>
+    <div class="content"><p>Common uses of GIS include inventory and management of resources, crime mapping, establishing and monitoring routes, managing networks, monitoring and managing vehicles, managing properties, locating and targeting customers, addressing public health concerns, mapping wildfire risk and preparedness, and modeling hazmat risk, etc.</p></div>
+       <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+      </div>
+    </div> 
+   <!-- 洪水发生原因的相关图片，id01是降雨，id02是高潮，id03是融雪 -->
+    <div id="id01" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/GIS/ice.bmp" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+     <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Display of earthquake records</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>The following map shows USGS earthquakes recorded between 5/25/2019 - 6/11/2019. The view's extent is set to Japan to show earthquakes recorded in this region.</div>
+    <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+    <div class="demo" >
+        <iframe src="gisUse_map.html" frameborder="0" style="width:100%; height:600px;"></iframe>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>
+       
+</body>
+</html>

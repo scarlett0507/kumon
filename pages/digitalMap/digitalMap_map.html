@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Digital Map</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css"/>
+    <script src="https://js.arcgis.com/4.11/"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script>
+      require([
+    	  "esri/Map",
+          "esri/views/MapView",
+          "esri/widgets/ScaleBar",
+          "esri/widgets/Compass",
+          "esri/widgets/CoordinateConversion",
+          "esri/widgets/Locate",
+          "esri/widgets/Fullscreen",
+          "esri/widgets/Search"
+      ], function(Map, MapView, ScaleBar, Compass, CoordinateConversion, Locate, Fullscreen, Search) {
+         
+      var map = new Map({
+          basemap: "streets"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [137.72,38.68],
+          zoom: 5
+        });
+
+        var scaleBar=new ScaleBar({
+        	view:view,
+        	unit:"dual"
+        });
+        view.ui.add(scaleBar,{
+        	position:"bottom-left"
+        });
+        
+        var compass = new Compass({
+        	  view: view
+        	});
+
+        	// adds the compass to the top left corner of the MapView
+        	view.ui.add(compass, "top-left");
+        	
+       	 var ccWidget = new CoordinateConversion({
+          	  view: view
+          	});
+          	// Adds widget in the bottom left corner of the view
+          	view.ui.add(ccWidget, "bottom-right");
+             	
+            var locateBtn = new Locate({
+                view: view
+              });
+
+              // Add the locate widget to the top left corner of the view
+              view.ui.add(locateBtn, {
+                position: "top-left"
+              });
+         
+              const searchWidget = new Search({
+            	  view: view
+            	});
+            	// Adds the search widget below other elements in
+            	// the top left corner of the view
+            	view.ui.add(searchWidget, {
+            	  position: "top-right",
+            	  index: 2
+            	});
+            	
+            var	fullscreen = new Fullscreen({
+            		  view: view
+            		});
+            		view.ui.add(fullscreen, "top-left");
+          	 
+      
+      	
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>

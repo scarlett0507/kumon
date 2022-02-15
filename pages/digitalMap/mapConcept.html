@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Concept of Maps</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">5 min</em></p>
+    </blockquote>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Concept of Maps</h3></legend>
+        </fieldset>
+    </div>
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+    <p align="left">A map is used symbolic representation characteristics of a place, usually drawn on a flat surface. Maps present information about the world in a simple, visual way. </p>
+    <p align="left">Vacationers use road maps to plot routes for their trips. Meteorologists—scientists who study weather—use weather maps to prepare forecasts. City planners decide where to put hospitals and parks with the help of maps that show land features and how the land is currently being used.</p>
+    </div>
+    
+     <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>World Map</h3></legend>
+        </fieldset>
+    </div>
+      <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+      <p align="left">A world map is a map of most or all of the surface of Earth. Maps of the world generally focus either on political features or on physical features. Political maps emphasize territorial boundaries and human settlement. Physical maps show geographic features such as mountains, soil type, or land use.</p>
+      <div><br/> </div>
+       <div class="demo" >
+        <img id="myImg" src="../../img/map/map.jpg" style="width:90%; height:90%;" alt="World Map" />
+        <div class="content">Map Black and Gold Detailed World Map with Cities (© Blursbyai).</div>         
+        <v><br>Use as map study material only.</v>
+     </div>
+   </div>
+
+    
+      
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>
+       
+</body>
+</html>

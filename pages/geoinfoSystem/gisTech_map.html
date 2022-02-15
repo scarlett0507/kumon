@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>3S</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css"/>
+      <link rel="stylesheet" href="../../css/disaster_font_japan.css" />
+  <script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script src="https://js.arcgis.com/4.11/"></script>
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/WebTileLayer",
+        "dojo/on",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/Compass",
+        "esri/widgets/CoordinateConversion",
+        "esri/widgets/BasemapToggle",
+        "esri/widgets/Locate"
+      ], function(Map, MapView, WebTileLayer, on, ScaleBar, Compass, CoordinateConversion, BasemapToggle, Locate) {
+    	  
+    	  const gsipaleLyr = new WebTileLayer({
+    	        urlTemplate:"https://cyberjapandata.gsi.go.jp/xyz/lum4bl_capital2005/{level}/{col}/{row}.png",
+    	        id:"gsipale",
+    	        opacity:0.5,
+    	        copyright:"地理院タイル（数値地図5000（土地利用））",
+    	        visible: false
+    	    });
+    	  
+        var map = new Map({
+          basemap: "streets",
+          layers: [gsipaleLyr]
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [139.512, 35.370],
+          zoom: 5
+        });
+        var scaleBar=new ScaleBar({
+        	view:view,
+        	unit:"dual"
+        });
+        view.ui.add(scaleBar,{
+        	position:"bottom-left"
+        });
+      
+        var compass = new Compass({
+        	  view: view
+        	});
+        	// adds the compass to the top left corner of the MapView
+        	view.ui.add(compass, "top-left");
+
+            
+            var ccWidget = new CoordinateConversion({
+            	  view: view
+            	});
+            	// Adds widget in the bottom left corner of the view
+            	view.ui.add(ccWidget, "bottom-right");
+        
+                var locateBtn = new Locate({
+                    view: view
+                  }); 
+                  // Add the locate widget to the top left corner of the view
+                  view.ui.add(locateBtn, {
+                    position: "top-left"
+                  });
+                       	
+        var basemapToggle = new BasemapToggle({
+        	  view: view,  // The view that provides access to the map's "streets" basemap
+        	  nextBasemap: "hybrid"  // Allows for toggling to the "hybrid" basemap
+        	});
+        view.ui.add(basemapToggle,"top-left");
+            
+        view.on("layerview-create", function(event) {
+            if (event.layer.id === "gsipale") {
+               console.log("地理院タイル（数値地図5000（土地利用））の LayerView が作成されました!", event.layerView);
+            }
+        });
+            
+            const gsipaleToggle = document.getElementById("gsipaleLyr");
+            on(gsipaleToggle, "change", function() {
+                gsipaleLyr.visible = gsipaleToggle.checked;
+            });
+      });
+    </script>
+  </head>
+  <body>
+  <div id="viewDiv">
+     
+   </div>
+ <script>
+  $(document).ready(function(){
+   $('#toggle').click(function(){
+    $('.layerToggle').animate({width:'toggle'},200);
+   });
+  });
+ </script>
+  </body>
+</html>

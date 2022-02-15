@@ -1,0 +1,138 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-size:100% ;
+    line-height: 1;
+    font: 10px/1.3 "MS Pゴシック",sans-serif;    
+}
+img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+    align:"middle";
+}
+v {
+    width: 90%;
+    height: 25%;
+    color: #000000;
+    margin-right: 10px;
+    letter-spacing: 2px;
+    line-height: 150%;
+    margin: 0 auto;
+    font:12px/1.5 "MS Pゴシック",sans-serif;
+}
+div.layerToggle {
+    bottom: 5%;
+    top: auto;
+    right: 1%;
+    width: 30%;
+    position: absolute;
+    z-index: 99;
+    background-color: white;
+    border-radius: 8px;
+    padding: auto;
+    opacity: 0.75;
+}
+div#title {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-size: 1.5em;
+    font:18px/1.0 "MS Pゴシック",sans-serif;
+}
+.content {
+    color: #000000;
+    margin: 0 auto;
+    width: 100%;
+    float: right;
+}
+p {
+    width: 90%;
+    height: 25%;
+    color: #000000;
+    margin-right: 10px;
+    letter-spacing: 2px;
+    line-height: 150%;
+    margin: 0 auto;
+    font-size:auto;
+    font:15px/1.1 "MS Pゴシック",sans-serif;
+}
+p1 {
+    color: #797979;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.6em;
+    float:left;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    font:15px/1.0 "MS Pゴシック",sans-serif;
+}
+p2{
+	width: 90%;
+    height: 25%;
+    color: #000000;
+    margin-right: 10px;
+    letter-spacing: 2px;
+    line-height: 150%;
+    margin: 0 auto;
+    font-size:0.2em;
+    font:8px/1.1 "MS Pゴシック",sans-serif;
+}
+div.container {
+   height: 50%;
+   float: right;
+}
+.my_button{  
+  background-color: #feffff;
+  border: none;
+  margin: 0 auto;
+  color: #FFFFFF;
+  padding:8px 15px;
+  text-align: center;
+  font-size: 0.8em;
+  opacity: 1;
+
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+   border-radius: 5px;
+   position:absolute;  
+   z-index: 100;
+   left:12px;  
+   top:170px;
+   font:8px/1.0 "MS Pゴシック",sans-serif;  
+}  
+.my_button:hover {opacity: 0.9}
+#topbar {
+        background: #fff;
+        padding: 10px;
+      }
+
+.action-button {
+        font-size: 16px;
+        background-color: transparent;
+        border: 1px solid #d3d3d3;
+        color: #6e6e6e;
+        height: 32px;
+        width: 32px;
+        text-align: center;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+      }
+
+.action-button:hover,
+.action-button:focus {
+        background: #0079c1;
+        color: #e4e4e4;
+      }
+
+.active {
+        background: #0079c1;
+        color: #e4e4e4;
+      }

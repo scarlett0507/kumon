@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>洪水ハザードマップ</title>
+    <link rel="stylesheet" href="../../css/font_kumon.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.17/"></script>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+    </style>
+
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/MapView",
+       "esri/layers/WebTileLayer",
+        "esri/layers/KMLLayer",
+        "esri/widgets/Search",
+        "esri/widgets/Compass",
+        "esri/widgets/ScaleBar",
+        "esri/widgets/Fullscreen",
+        "esri/widgets/Expand",
+        "esri/widgets/DistanceMeasurement2D",
+        "esri/widgets/AreaMeasurement2D",
+        "dojo/on"
+      ], function (Map,MapView,WebTileLayer,KMLLayer,Search,Compass,ScaleBar,Fullscreen,Expand,DistanceMeasurement2D,AreaMeasurement2D,on) {
+    	var activeWidget = null;
+
+        var gsipaleLyr = new WebTileLayer({
+            urlTemplate:"https://cyberjapandata.gsi.go.jp/xyz/pale/{level}/{col}/{row}.png",
+            id:"gsipale",
+            opacity:0.85,
+            copyright:"地理院タイル（淡色地図）",
+            visible: false
+        });
+        var gsipaleLyr3 = new WebTileLayer({
+            urlTemplate:"https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{level}/{col}/{row}.jpg",
+            id:"gsipale3",
+            opacity:0.9,
+            copyright:"地理院タイル（seamlessphoto）",
+            visible: false
+        });
+
+
+        var gsipaleLyr5 = new WebTileLayer({
+            urlTemplate:"https://disaportaldata.gsi.go.jp/raster/01_flood_l2_shinsuishin_data/{level}/{col}/{row}.png",
+            id:"gsipale5",
+            opacity:0.6,
+            copyright:"洪水浸水想定区域（想定最大規模）国土交通省各地方整備局等",
+            visible: false
+        });
+
+        var gsipaleLyr6 = new WebTileLayer({
+            urlTemplate:"https://cyberjapandata.gsi.go.jp/xyz/ort_USA10/{z}/{x}/{y}.png",
+            id:"gsipale6",
+            opacity:0.9,
+            copyright:"地理院タイル（空中写真（1961年～1969年））",
+            visible: false
+        });
+
+
+        var gsipaleLyr2 = new WebTileLayer({
+            urlTemplate:"https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{level}/{col}/{row}.png",
+            id:"gsipale2",
+            opacity:1.0,
+            copyright:"地理院タイル（陰影起伏図）",
+            visible:false
+        });
+
+        var shelter = new KMLLayer({
+        url:"https://scarlett0507.github.io/DRRE_Japan/kml/shelter.kml",
+        id:"shelter",
+        copyright:"国土数値情報（避難施設）を加工し作成",
+        visible: false
+      });
+
+      const kiban = new KMLLayer({
+       url:"https://scarlett0507.github.io/DRRE_Japan/kml/doc.kml",
+       id:"kiban",
+       copyright:"基盤地図情報を加工し作成",
+       visible: false
+     });
+        var area = new KMLLayer({
+        url:"https://scarlett0507.github.io/DRRE_Japan/kml/Box.kmz",
+        id:"area"
+      });
+
+
+      var map = new Map({
+        basemap: "topo",
+        opacity:0.5,
+        layers:[gsipaleLyr2,gsipaleLyr3,gsipaleLyr6,gsipaleLyr,gsipaleLyr5,area,kiban,shelter]
+      });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [139.549, 35.370],
+          zoom: 13
+        });
+
+        var searchWidget = new Search({
+          view: view
+        });
+
+        view.ui.add(searchWidget, {
+          position: "top-right"
+        });
+
+        var scalebar = new ScaleBar({
+          view: view,
+          unit: "dual"
+        });
+        view.ui.add(scalebar, "bottom-left");
+
+        var compass = new Compass({
+                view: view
+                });
+        view.ui.add(compass, "top-left");
+
+        var fullscreen = new Fullscreen({
+  		  view: view
+  		});
+  		view.ui.add(fullscreen, "top-left");
+
+        view.ui.add("topbar", "top-right");
+
+        document
+          .getElementById("distanceButton")
+          .addEventListener("click", function () {
+            setActiveWidget(null);
+            if (!this.classList.contains("active")) {
+              setActiveWidget("distance");
+            } else {
+              setActiveButton(null);
+            }
+          });
+
+        document
+          .getElementById("areaButton")
+          .addEventListener("click", function () {
+            setActiveWidget(null);
+            if (!this.classList.contains("active")) {
+            	setActiveWidget("area");
+            } else {
+              setActiveButton(null);
+            }
+          });
+
+           function setActiveWidget(type) {
+             switch (type) {
+               case "distance":
+                 activeWidget = new DistanceMeasurement2D({
+                   view: view
+                 });
+
+                 // skip the initial 'new measurement' button
+                 activeWidget.viewModel.newMeasurement();
+
+                 view.ui.add(activeWidget, "bottom-left");
+                 setActiveButton(document.getElementById("distanceButton"));
+                 break;
+               case "area":
+                 activeWidget = new AreaMeasurement2D({
+                   view: view
+                 });
+
+                 // skip the initial 'new measurement' button
+                 activeWidget.viewModel.newMeasurement();
+
+                 view.ui.add(activeWidget, "bottom-left");
+                 setActiveButton(document.getElementById("areaButton"));
+                 break;
+               case null:
+                 if (activeWidget) {
+                   view.ui.remove(activeWidget);
+                   activeWidget.destroy();
+                   activeWidget = null;
+                 }
+                 break;
+             }
+           }
+
+           function setActiveButton(selectedButton) {
+             // focus the view to activate keyboard shortcuts for sketching
+             view.focus();
+             var elements = document.getElementsByClassName("active");
+             for (var i = 0; i < elements.length; i++) {
+               elements[i].classList.remove("active");
+             }
+             if (selectedButton) {
+               selectedButton.classList.add("active");
+             }
+           }
+
+      view.on("layerview-create", function(event) {
+          if (event.layer.id === "gsipale") {
+            console.log("地理院タイル（淡色地図）の LayerView が作成されました!", event.layerView);
+          }
+          if (event.layer.id === "gsipale2") {
+            console.log("地理院タイル（色別標高図）の LayerView が作成されました!", event.layerView);
+          }
+          if (event.layer.id === "gsipale3") {
+            console.log("地理院タイル（シームレス写真）の LayerView が作成されました!", event.layerView);
+          }
+          if (event.layer.id === "gsipale5"){
+          console.log("gsipale5の LayerView が作成されました!", event.layerView);
+        }
+        if (event.layer.id === "gsipale6") {
+          console.log("地理院タイル（空中写真（1961年～1969年））の LayerView が作成されました!", event.layerView);
+        }
+        if (event.layer.id === "shelter"){
+          console.log("shelterの LayerView が作成されました!", event.layerView);
+       }
+        if (event.layer.id === "area"){
+         console.log("areaの LayerView が作成されました!", event.layerView);
+       }
+        if (event.layer.id === "kiban"){
+         console.log("kibanの LayerView が作成されました!", event.layerView);
+       }
+        });
+
+    const gsipaleToggle = document.getElementById("gsipaleLyr");
+    const gsipaleToggle2 = document.getElementById("gsipaleLyr2");
+    const gsipaleToggle3 = document.getElementById("gsipaleLyr3");
+    const gsipaleToggle5 = document.getElementById("gsipaleLyr5");
+    const gsipaleToggle6 = document.getElementById("gsipaleLyr6");
+    const shelterToggle = document.getElementById("shelter");
+    const kibanToggle = document.getElementById("kiban");
+
+      on(gsipaleToggle, "change", function() {
+            gsipaleLyr.visible = gsipaleToggle.checked;
+        });
+      on(gsipaleToggle2, "change", function() {
+            gsipaleLyr2.visible = gsipaleToggle2.checked;
+        });
+      on(gsipaleToggle3, "change", function() {
+            gsipaleLyr3.visible = gsipaleToggle3.checked;
+        });
+      on(gsipaleToggle5, "change", function() {
+            gsipaleLyr5.visible = gsipaleToggle5.checked;
+        });
+      on(gsipaleToggle6, "change", function() {
+            gsipaleLyr6.visible = gsipaleToggle6.checked;
+        });
+      on(kibanToggle, "change", function() {
+        kiban.visible = kibanToggle.checked;
+      });
+      on(shelterToggle, "change", function() {
+        shelter.visible = shelterToggle.checked;
+      });
+    });
+
+    </script>
+  </head>
+
+  <body>
+  <div id="viewDiv" ><button id="toggle" type="button" class="my_button"><p1>凡例</button></div>
+ <div class="container">
+    <div class="layerToggle">
+     <div id="title"><br>地図データ</div>
+      <div class="content">
+       <p><input type="checkbox"id="gsipaleLyr" /> 地形図<br>
+      <p><input type="checkbox" id="gsipaleLyr2" /> 起伏地図<br>
+      <p><input type="checkbox" id="gsipaleLyr3" /> 最近の空中写真<br>
+      <p><input type="checkbox" id="gsipaleLyr6" /> 約70年前の空中写真<br>
+      <p><input type="checkbox" id="shelter" /> 一次避難所<br>
+      <p><input type="checkbox" id="gsipaleLyr5" /> 全国洪水浸水想定区域（想定最大規模）<br>
+      <p><input type="checkbox" id="kiban" /> 柏尾川洪水浸水想定区域（想定最大規模）<br>
+      <div style="width:100px; height:90px; margin:0 auto;">
+      <img src="../../img/shinsui_legend2-1.png" width="130%"  id="img01"><br></div>
+      <p2><a href="https://github.com/yamauchi-inochu/drr" target="_blank">この地図について</a>
+    </div>
+    </div>
+    </div>
+      <div id="topbar">
+      <button  class="action-button esri-icon-measure-line" id="distanceButton" type="button" title="Measure distance between two or more points"></button>
+      <button class="action-button esri-icon-measure-area" id="areaButton" type="button" title="Measure area"></button>
+     </div>
+ <script>
+  $(document).ready(function(){
+   $('#toggle').click(function(){
+    $('.layerToggle').animate({width:'toggle'},200);
+   });
+  });
+ </script>
+  </body>
+</html>

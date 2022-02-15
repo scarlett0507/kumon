@@ -1,0 +1,34 @@
+﻿body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #fff; 
+    font-size:100%;
+    line-height: 1
+}
+
+#mind-flash h3 {
+	font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    bottom: 45%;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2.3em;
+    color: #FFF;
+    background: url("30.jpg") repeat scroll 0% 0% transparent;
+}
+
+#mind-flash p {
+	font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    bottom: 17%;
+    left: 0;
+    width: 100%;
+    height: 28%;
+    text-align: center;
+    color: #FFF;
+    line-height: 120%;
+    font-size: 0.8em;
+    background: url("30.jpg") repeat scroll 0% 0% transparent;
+}

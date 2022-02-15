@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Landuse</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">5 min</em></p>
+    </blockquote>
+    <!-- 洪水介绍的标题 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About Landuse</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>Land use is the term used to describe the human use of land. It represents the economic and cultural activities practiced at a given place. Public and private lands frequently represent very different uses.</div>
+    <div class="content"><p>Land use differs from land cover. Some benefits are not always physically obvious (e.g., land used for producing timber but not harvested for many years and forested land designated as wilderness will both appear as forest-covered, but they have different uses).</div>
+    <!-- 面板的背景颜色和手风琴折叠的设置，洪水发生的原因 -->
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">Effects of Land Use Changes</div>
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Land Development</h2>
+              <div class="layui-colla-content">
+                <p>Land development creates impervious surfaces by constructing roads, parking lots, and other structures. For example:</p>
+                <p>Point source discharges from industrial and municipal wastewater treatment facilities can contribute to toxic compounds and heated water.</p>
+                <p>Some land development patterns, particularly dispersed growth such as “suburbanization,” can contribute to various environmental concerns.</p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Agricultural Uses</h2>
+              <div class="layui-colla-content">
+                <p>Agricultural land uses can affect the quality of water and watersheds.</p>
+                <p>Agricultural land use may also result in loss of native habitats or increased wind erosion and dust, exposing humans to particulate matter and various chemicals.</p>
+                <p>Some land uses can accelerate or exacerbate the spread of invasive species.</p>
+               </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+     <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Landuse Map of Japan</h3></legend>
+        </fieldset>
+    </div>
+      <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+     <p align="left">The land-use status is investigated by field surveys, aerial photographs, materials, etc., and is color-coded on a map. (©国土地理院️)</p>
+       <div class="demo" >
+        <img id="myImg" src="../../img/Natural/landuse.jpeg" style="width:90%; height:90%;" alt="普通地图" />
+        <v><br>Use as map study material only.</v>
+     </div>
+   </div>
+    
+ 
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>   
+</body>
+</html>

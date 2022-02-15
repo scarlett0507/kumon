@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hazard Map</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">18 min</em></p>
+    </blockquote>
+    <!-- 洪水介绍的标题 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About Hazard Maps</h3></legend>
+        </fieldset>
+    </div>
+   <div class="content"><p align="left">Hazard maps show areas where damage is expected and places where people can evacuate to and are sometimes called disaster prevention maps.<br></p>
+    <p align="left">Having further risk information or understanding of dangerous areas and evacuation routes would protect people in an emergency. For example, according to hazard maps, people can evacuate before a storm or flood damage occurs.<br></p>
+    <p align="left">It can be divided into static hazard maps in paper and image file form (including PDF) and operational Web hazard maps.<br></p>
+   </div>
+    <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+    <div class="layui-row layui-col-space15">
+    </div>
+    </div>
+   
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Static Hazard Maps</h3></legend>
+        </fieldset>
+    </div>
+   <div class="content"><p align="left">The advantage of static hazard maps in paper and image file form is that they can be used at any time and anywhere. However, the disaster-related information is only displayed on one map in a specific scope and scale, cannot zoom in or zoom out to view risk content in other areas.<br></p></div>
+     <div class="content"><p>The following is the flood hazard map of Totsuka Ward, Yokohama city, in image file form.</div>    
+    <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+       <div class="demo" >
+        <img id="myImg" src="../../img/disaster/paperMap.jpg" style="width:90%; height:90%;" alt="洪水灾害预测地图" />
+        <v><br>Use as study material only.</v>
+     </div>
+   </div>
+      <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Operational Web Hazard Maps</h3></legend>
+        </fieldset>
+    </div>
+ <div class="content"><p align="left">Web hazard maps require the use of electronics and networks. However, it includes a much more comprehensive range and more detailed information. People can also analyze by overlaying layers that contain various types of hazard information. For example, overlay a flood inundation layer on base map data to check if an area is within the range of waterlogging. <br></p> </div>
+   <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+       <div class="demo" >
+        <iframe src="hazardConcept_map.html" frameborder="0" style="width:100%; height:600px;"></iframe>
+        <v><br>Use as study material only.</v>
+     </div>
+   </div>
+   
+   <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Some Information for Using Hazard Maps</h3></legend>
+        </fieldset>
+    </div>
+ <div class="content"><p align="left">Flood hazard maps show the depth of inundation levels in addition to the expected inundation area, making it possible to see where the dangerous areas are. If the expected flooding is around 3 meters, the first floor of buildings will primarily be flooded, and if it is 6 meters, the second floor will be submerged.</p>
+     <p align="left">Seismic hazard maps show the areas that are possible and less possible to shake, as well as the risk of soil liquefaction and the risk of large-scale fires.</p>
+     <p align="left">As for the road, DRR information may be included in the hazard map for each type of disaster.</p>
+     <p align="left">Parks and universities in low-risk areas are designated as evacuation locations because they are improbable to be affected by shaking or fire in the case of earthquakes, and there is almost no possibility of inundation in the case of floods.</p>
+   </div>
+   <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+<div class="layui-row layui-col-space15">
+</div>
+   </div>
+
+      
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>   
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Climate</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">10 min</em></p>
+    </blockquote>
+    <!-- 洪水介绍的标题 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About Climate</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>Climate is the long-term pattern of weather in an area, typically averaged over a period of 30 years. More rigorously, it is the mean and variability of meteorological variables over a time spanning from months to millions of years. Some of the meteorological variables that are commonly measured are temperature, humidity, atmospheric pressure, wind, and precipitation. </div>
+    <!-- 面板的背景颜色和手风琴折叠的设置，洪水发生的原因 -->
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">Köppen Climate Classification</div>
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Tropical Climates</h2>
+              <div class="layui-colla-content">
+                <p>Constant high temperatures characterize tropical climates (at sea level and low elevations); all 12 months of the year have average temperatures of 18 °C or higher; and generally high annual precipitation.<button onclick="document.getElementById('id01').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Dry (desert and semi-arid) Climates</h2>
+              <div class="layui-colla-content">
+                <p>These climates are characterized by annual precipitation more petite than a threshold value that approximates the potential evapotranspiration.<button onclick="document.getElementById('id02').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Temperate Climates</h2>
+              <div class="layui-colla-content">
+                <p>Temperate climates are defined as having an average temperature above 0 °C (or −3 °C) in their coldest month but below 18 °C. The average temperature of −3 °C roughly coincides with the equatorward limit of frozen ground and snow cover lasting for a month or more.<button onclick="document.getElementById('id03').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Continental Climates</h2>
+              <div class="layui-colla-content">
+                <p>These climates have an average temperature above 10 °C in their warmest months and the coldest month average below 0 °C (or −3 °C). These usually occur in the interiors of continents and on their upper east coasts, north of 40°N.<button onclick="document.getElementById('id04').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Polar Climates</h2>
+              <div class="layui-colla-content">
+                <p>Polar climates are defined as the warmest temperature of any month below 10 °C. Polar climates are further divided into tundra climates and icecap climates.<button onclick="document.getElementById('id05').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div id="id01" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/Natural/Trop.png" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+     <div id="id02" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/Natural/dry.png" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id03" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/Natural/Temp.png" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id04" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id04').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/Natural/Cont.png" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id05" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id05').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/Natural/Polar.png" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Climate of Japan</h3></legend>
+        </fieldset>
+    </div>
+    
+ <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-card">
+    <p align="left">The Japanese Archipelago ranges from north to south and has mountainous areas with high elevations. Because of this, there are varied climatic zones throughout the archipelago: the subarctic zone, the temperate zone, and the subtropical zone.</p>
+    <p align="left">In the temperate zone, which occupies the largest archipelago area, seasonal temperature changes are abrupt and form four distinct seasons: spring, summer, autumn, and winter.  <br></p>
+    <p align="left">As for rainfall, the archipelago receives long rains during the early half of summer and autumn and heavy snows along the Japan Sea in winter. <br></p>
+    </div>
+    </div>
+    </div>
+  
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Climate Change</h3></legend>
+        </fieldset>
+    </div>
+     <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-card">
+    <p align="left">Climate change refers to long-term shifts in temperatures and weather patterns. These shifts may be natural, such as through variations in the solar cycle. But since the 1800s, human activities have been the main driver of climate change, primarily due to burning fossil fuels like coal, oil, and gas.</p>
+    <p align="left">Burning fossil fuels generates greenhouse gas emissions that act like a blanket wrapped around the Earth, trapping the sun’s heat and raising temperatures. <br></p>
+    <p align="left">Examples of greenhouse gas emissions causing climate change include carbon dioxide and methane. These come from using gasoline for driving a car or coal for heating a building. Clearing land and forests can also release carbon dioxide. Landfills for garbage are a major source of methane emissions. Energy, industry, transport, buildings, agriculture, and land use are the main emitters.</p>
+    <div><br/></div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pNlmo2FfQIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <v><br>© World Meteorological Organization - WMO</v>
+    </div>
+    </div>
+    </div>
+      
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>   
+</body>
+</html>

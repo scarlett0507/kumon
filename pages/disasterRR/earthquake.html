@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Earthquake</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">18 min</em></p>
+    </blockquote>
+    <!-- 洪水介绍的标题 -->
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About Earthquake</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p>An earthquake is the sudden release of strain energy in the Earth’s crust, resulting in shaking waves that radiate outwards from the earthquake source. An earthquake starts termed the focus or hypocentre and many kilometers deep within the Earth. The point at the surface directly above the focus is called the earthquake epicenter.</div>
+    <div class="content"><p>When the tectonic plates move against each other, there is a point where they interact. The moment the plates begin to move, the potential energy is released from the hypocenter. The outcome is an earthquake.</div>
+    <!-- 面板的背景颜色和手风琴折叠的设置，洪水发生的原因 -->
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">Four Different Types of Earthquakes</div>
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Tectonic Earthquake</h2>
+              <div class="layui-colla-content">
+                <p>A tectonic earthquake occurs when the earth's crust breaks due to geological forces on rocks and adjoining plates that cause physical and chemical changes.</p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Volcanic Earthquake</h2>
+              <div class="layui-colla-content">
+                <p>A volcanic earthquake is an earthquake that results from tectonic forces which occur in conjunction with volcanic activity.</p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Collapse Earthquake</h2>
+              <div class="layui-colla-content">
+                <p>A collapse earthquake is a small earthquake in underground caverns and mines caused by seismic waves produced from rock explosions on the surface.</p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Explosion Earthquake</h2>
+              <div class="layui-colla-content">
+                <p>An explosion earthquake is an earthquake resulting from the detonation of a nuclear and chemical device.</p>
+              </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+          <div class="layui-card">
+            <div class="layui-card-header">Earthquake Fault Types</div>
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Normal Faults</h2>
+              <div class="layui-colla-content">
+                <p>Normal faults form when the hanging wall drops down. The forces that create normal faults are pulling the sides apart or extensional.<button onclick="document.getElementById('id01').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Reverse Faults</h2>
+              <div class="layui-colla-content">
+                <p>Reverse faults form when the hanging wall moves up. The forces creating reverse faults are compressional, pushing the sides together.<button onclick="document.getElementById('id02').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Strike-slip faults</h2>
+              <div class="layui-colla-content">
+                <p>Strike-slip faults have walls that move sideways, not up or down.<button onclick="document.getElementById('id03').style.display='block'" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe64a;</i></button></p>
+              </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div id="id01" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/disaster/normal.jpg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id02" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/disaster/reverse.jpg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+    <div id="id03" class="modal">
+      <div class="modal-content">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close">&times;</span>
+          <div class="imgstar">
+            <img id="myImg" src="../../img/disaster/strike.jpg" alt="flood" style="width:90%; height:90%;">
+          </div> 
+      </div>
+    </div>
+   <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Video: Earthquakes | National Geographic</h3></legend>
+        </fieldset>
+    </div>  
+    <div class="content"><p align="left">Earthquakes are unpredictable and can strike with enough force to bring buildings down. Do you know what's behind earthquakes? What can we do to minimize the damage caused by earthquakes? The following video gives a brief introduction to earthquakes.<br></p></div>
+ <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-card">
+      <div class="layui-card-body">
+      </div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e7ho6z32yyo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+      <v><br>© National Geographic</v>
+   </div>
+  </div>
+ </div>
+
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Display of Earthquake Records</h3></legend>
+        </fieldset>
+    </div>
+     <div class="content"><p>The following map shows USGS earthquakes recorded between 5/25/2019 - 6/11/2019. The view's extent is set to Japan to show earthquakes recorded in this region.</div> 
+   <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+       <div class="demo" >
+        <iframe src="../geoinfoSystem/gisUse_map.html" frameborder="0" style="width:100%; height:600px;"></iframe>
+     </div>
+   </div>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Display of Earthquake Records</h3></legend>
+        </fieldset>
+    </div>
+     <div class="content"><p>Since earthquakes are unpredictable, the frequency of past seismic records can be seen. The following map shows 「確率論的地震動予測地図」「長期間平均ハザード」「地震分類別地図」and so on.</div> 
+   <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+       <div class="demo" >
+        <iframe src="https://www.j-shis.bosai.go.jp/map/" frameborder="0" style="width:100%; height:600px;"></iframe>
+     </div>
+   </div>
+  
+      
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>   
+    <script type="text/javascript" src="../../js/innerPage_volcano.js"></script>
+</body>
+</html>

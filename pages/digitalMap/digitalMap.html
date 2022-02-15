@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Digital Maps</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">12 min</em></p>
+    </blockquote>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Digital Maps</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p align="left">Electronic maps are digitized representations of geographic areas. These tools can be used in everything from in-car navigation to the mapping of ethnographic data. Many are freely available to public members who can download and use them on a variety of devices.</p>
+    <p align="left">Much of cartography, especially at the data-gathering survey level, has been subsumed by Geographic Information Systems (GIS).</p></div>
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">The advantages of digital maps</h2>
+              <div class="layui-colla-content">
+                <p>Paper maps were widespread before the internet era. The problem with paper maps is, it’s not real-time maps. So, you don’t see roadblocks or live traffic and so on. Thus, it lacks specific details of the area. Similarly, you can get a specific location map, but you cannot zoom. With the advent of mobile computing, it is effortless to find a map of any area via smartphone. So, now maps are available in your pocket all the time. Today’s electronic maps work in conjunction with the Internet and GPS. You can find exactly where you are.</p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">The data of digital maps</h2>
+              <div class="layui-colla-content">
+                <p>The digital maps need various systems, such as remote sensing and GIS. It also requires extensive street-level data. Furthermore, it is not over when the collection of data is complete. It would be best to keep on updating that data because our physical world changes every day. Therefore, it is necessary to update that data frequently to make it relevant to the physical world. And then, only these maps make sense.</p>
+              </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">How does digital maps work?</h2>
+              <div class="layui-colla-content">
+                <p>When you switch on your phone's GPS, the GPS sensor activates and finds a minimum of four terrestrial GPS satellites. Then it finds the exact coordinates by communicating with the satellite. The GPS sensor then transmits these coordinates to the digital mapping program. The digital mapping program takes these as a starting point. The user then selects an endpoint on digital maps. The digital mapping program then visualizes the best possible route by utilizing sensors' information.</p>
+              </div>
+              </div>
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Digital World Map</h3></legend>
+        </fieldset>
+    </div>
+   <div class="content"><p>The following map is an electronic version of the world map.</div> 
+   <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+       <div class="demo" >
+        <iframe src="digitalMap_map.html" frameborder="0" style="width:100%; height:600px;"></iframe>
+     </div>
+   </div>
+      
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>
+       
+</body>
+</html>

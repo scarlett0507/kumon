@@ -1,0 +1,132 @@
+{
+  "digitalMap": [
+    {
+      "title": "Concept of Maps",
+      "href": "pages/digitalMap/mapConcept.html",
+      "spread": false
+    },
+    {
+      "title": "Regulation of Maps",
+      "href": "pages/digitalMap/mapRegulation.html",
+      "spread": false
+    },
+    {
+      "title": "Map Classification",
+      "href": "pages/digitalMap/mapClass.html",
+      "spread": false
+    },
+    {
+      "title": "Digital Maps",
+      "href": "pages/digitalMap/digitalMap.html",
+      "spread": false
+    }
+  ],
+  "geoinfoSystem": [
+    {
+      "title": "Basic of GIS",
+      "href": "pages/geoinfoSystem/gisConcept.html",
+      "spread": false
+    },
+    {
+      "title": "GIS related technology",
+      "href": "pages/geoinfoSystem/gisTech.html",
+      "spread": false
+    },
+    {
+      "title": "Utilization of GIS",
+      "href": "pages/geoinfoSystem/gisUse.html",
+      "spread": false
+    },
+    {
+      "title": "Digital Map Creation",
+      "href": "pages/geoinfoSystem/draw.html",
+      "spread": false
+    }
+  ],
+  "naturalEnvi": [
+    {
+      "title": "Topography",
+      "href": "pages/naturalEnvi/topography.html",
+      "spread": false
+    },
+    {
+      "title": "Climate",
+      "href": "pages/naturalEnvi/climate.html",
+      "spread": false
+    },
+    {
+      "title": "Rivers",
+      "href": "pages/naturalEnvi/stream.html",
+      "spread": false
+    },
+    {
+      "title": "Land use",
+      "href": "pages/naturalEnvi/landuse.html",
+      "spread": false
+    },
+    {
+      "title": "Natural Disasters",
+      "href": "pages/naturalEnvi/naturalDisaster.html",
+      "spread": false
+    }
+  ],
+  "disasterRR": [
+    {
+      "title": "Concept of Hazard Maps",
+      "href": "pages/disasterRR/hazardConcept.html",
+      "spread": false
+    },
+    {
+      "title": "Earthquakes and DRR",
+      "href": "pages/disasterRR/earthquake.html",
+      "spread": false
+    },
+    {
+      "title": "Tsunamis and DRR",
+      "href": "pages/disasterRR/mainTsunami.html",
+      "spread": false
+    },
+    {
+      "title": "Sediment Disasters and DRR",
+      "href": "pages/disasterRR/landslides.html",
+      "spread": false
+    },
+    {
+      "title": "Volcanic Disasters and DRR",
+      "href": "pages/disasterRR/volcano.html",
+      "spread": false
+    },
+    {
+      "title": "Wind Disasters and DRR",
+      "href": "pages/disasterRR/typhoonSnow.html",
+      "spread": false
+    },
+    {
+      "title": "Floods and DRR",
+      "href": "pages/disasterRR/mainFlood.html",
+      "spread": false
+    },
+    {
+      "title": "Quiz",
+      "href": "pages/disasterRR/Quiz_Q.html",
+      "spread": false
+    }
+  ],
+
+ "quiz": [
+    {
+      "title": "Pretest",
+      "href": "pages/Test/Pretest.html",
+      "spread": false
+    },
+    {
+      "title": "Posttest",
+      "href": "pages/Test/Posttest.html",
+      "spread": false
+    }
+  ]
+
+
+}
+
+

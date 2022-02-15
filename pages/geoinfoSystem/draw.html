@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Digital Map Creation</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" />
+    <link rel="stylesheet" href="../../layui/css/mind.css" />
+    <link rel="stylesheet" href="../../layui/css/disaster_font_2.0.css" />
+
+</head>
+
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote">
+        <p style="text-align:right">Recommended Study Time:<em class="layui-word-aux">10 min</em></p>
+    </blockquote>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Digital Map Creation</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content"><p align="left">The art of making maps has changed considerably in recent years due to rapidly evolving computer technology. GIS allows digital form representations of objects on a map. This ability to directly link data to objects on a map has revolutionized cartography.</p></div>
+    <div style="padding:20px; background-color: #F2F2F2; width: 90%; margin: 0 auto;">
+      <div class="layui-row layui-col-space15">
+      </div>
+ </div>
+
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Cartography</h3></legend>
+        </fieldset>
+    </div>
+     <div class="content"><p>Try to create a customized map in the following Web map panel. When creating the map, the most important thing is to choose the appropriate scale based on what you want to display.</div> 
+   <div style="padding: 20px; background-color: #F2F2F2; width: 90%; margin: 0 auto; text-align: center;">
+       <div class="demo" >
+        <iframe src="draw_map.html" frameborder="0" style="width:100%; height:600px;"></iframe>
+     </div>
+   </div>
+
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Review Questions</h3></legend>
+        </fieldset>
+    </div>
+    <blockquote class="layui-elem-quote">
+    Q: <em class="layui-word-aux">What objects do you use points, lines, and polygons to represent on the maps?</em>
+    </blockquote>   
+
+    <script type="text/javascript" src="../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "../../js/"
+        }).extend({
+            "bodyTab": "bodyTab"
+        })
+        layui.use(['code', 'jquery', 'bodyTab'], function () {
+            var $ = layui.$,
+                tab = layui.bodyTab();
+            layui.code({
+                about: false
+            });
+            $(".goDataMenu").click(function () {
+                parent.tab.tabAdd($(this));
+            })
+        })
+    </script>
+       
+</body>
+</html>

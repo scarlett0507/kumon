@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Homepage</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../layui/css/mind.css" />
+    <link rel="stylesheet" href="../layui/css/disaster_font.css" />
+    <style>
+
+    </style>
+</head>
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote layui-bg-green">
+		<div id="nowTime"></div>
+	</blockquote>
+    <div class="layui-carousel" id="mind-flash">
+        <div carousel-item>
+            <div><img src="../img/inner/envir.jpg" width="100%" height="100%"></a><h3>Natural Environment</a></h3><p>Jiuzhaigou is a nature reserve and national park located in the north of Sichuan Province in southwestern China. Jiuzhaigou was inscribed by UNESCO as a World Heritage Site in 1992 and a World Biosphere Reserve in 1997. In August 2017, a magnitude 7.0 earthquake struck Jiuzhaigou County, causing significant structural damage.</p></div>
+            <div><img src="../img/inner/indo.jpg" width="100%" height="100%"></a><h3>Disaster Risk Reduction</a></h3><p>Mount Agung, a volcano on the island of Bali in Indonesia, erupted five times in late November 2017, causing thousands to evacuate, disrupting air travel, and causing environmental damage. The eruption plume rose 1.5–4 km above the summit crater. More than 100,000 people in a 10-kilometer radius of the volcano were ordered to evacuate.</p></div>
+            <div><img src="../img/inner/mapp.png" width="100%" height="100%"></a><h3>Map</a></h3><p>This map is a luminous map made by the National Aeronautics and Space Administration (NASA) in 2012.</p></div>
+            <div><img src="../img/inner/test.gif" width="100%" height="100%"></a><h3>GIS</a></h3><p>This dynamic digital map shows the development and changes of New York City in 137 years.</p></div>
+        </div>
+        </div>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>About This Material</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content">
+        <p>Over the past 20 years, disasters caused 2.9 trillion USD worldwide direct economic losses. It is predicted that in the coming years, people affected by disasters will be increasing because both the frequency and intensity of natural hazards will rise. In today's world, science and technology in economic and social development are the decisive forces. People are getting used to being supported by technologies, especially computer-related ones, in various situations and activities of the daily social routine. It is necessary to use maps and geographic information to understand disaster risk reduction (DRR) in the information society. Based on Web geographic information system (GIS) technology, we construct material for learning GIS and DRR content.<br/></p>
+    </div>
+    <div class="content"> <br/></div>
+    <div id="title">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><h3>Content</h3></legend>
+        </fieldset>
+    </div>
+    <div class="content">
+        <p>✓ This material contains satellite images, terrain maps, road maps, and other digital maps to understand hazard information.</p>
+        <p>✓ Train geospatial thinking skills and consider DRR methods by overlaying and analyzing layers of geographic data (such as past earthquakes, floods, volcanic eruptions, and other related disaster data).</p>
+        <p>✓ This material presents geographical events at various spatial scales, from micro to macro.</p>
+    </div>
+    <div class="content"> <br/></div>
+    <div class="demo">
+         <iframe src="../pages/3Dfont.html" frameborder="0" style="width:100%; height:300px;">  </iframe>
+    </div>
+    
+    <div id="title">
+         <fieldset class="layui-elem-field layui-field-title">
+              <legend><h3>Researcher</h3></legend>
+         </fieldset>
+    </div>
+    <div class="content">
+         <li><p>Researcher Representative：<a href="http://oguchaylab.csis.u-tokyo.ac.jp/">小口 高 (Takashi Oguchi)</a></p></li>
+    </div>
+    <div class="content"> <br/></div>
+    <script src="../layui/layui.all.js" charset="utf-8"></script>
+    <div id="LAY_democodejs">
+         <script>
+             layui.use(['carousel', 'form'], function () {
+                 var carousel = layui.carousel
+                     , form = layui.form;
+
+                 layui.use('carousel', function () {
+                     var carousel = layui.carousel;
+                     //建造实例
+                     carousel.render({
+                         elem: '#mind-flash'
+                         , width: '100%'
+                         , height: '280px'
+                         , interval: '1500'
+                     });
+                 });
+
+                 //监听开关
+                 form.on('switch(autoplay)', function () {
+                     ins3.reload({
+                         autoplay: this.checked
+                     });
+                 });
+
+                 $('.demoSet').on('keyup', function () {
+                     var value = this.value
+                         , options = {};
+                     if (!/^\d+$/.test(value)) return;
+
+                     options[this.name] = value;
+                     ins3.reload(options);
+                 });
+
+                 //其它示例
+                 $('.demoTest .layui-btn').on('click', function () {
+                     var othis = $(this), type = othis.data('type');
+                     active[type] ? active[type].call(this, othis) : '';
+                 });
+             });
+
+
+             layui.use('element', function () {
+                 var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+                 //监听导航点击
+                 element.on('nav(demo)', function (elem) {
+                     //console.log(elem)
+                     layer.msg(elem.text());
+                 });
+             });
+        </script>
+    </div>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>
